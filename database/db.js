@@ -5,7 +5,7 @@ const winston = require('winston');
  var config = 
    {
      user: 'dbadmin', // update me
-     password: 'Espl@123', // update me 
+     password: 'espl@123', // update me 
      server: 'einterceptor.database.windows.net', // update me
      database: 'EInterceptor',
      options: 

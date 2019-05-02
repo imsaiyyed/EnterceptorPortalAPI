@@ -1,2 +1,14 @@
 {"level":"info","message":"Server started at port 5000.","timestamp":"2018-11-20T12:23:01.389Z"}
 {"level":"info","message":"Connected to database successfully.","timestamp":"2018-11-20T12:23:01.467Z"}
+{"level":"info","message":"Server started at port \\\\.\\pipe\\190cff3f-3f5e-4910-82e7-380c8d2cc0f0.","timestamp":"2019-05-02T05:21:52.385Z"}
+{"message":"Database Connection Failed!","stack":"Error: Login failed for user 'dbadmin'.\n    at Connection.tedious.once.err (D:\\home\\site\\wwwroot\\node_modules\\mssql\\lib\\tedious.js:216:17)\n    at Object.onceWrapper (events.js:316:30)\n    at emitOne (events.js:115:13)\n    at Connection.emit (events.js:210:7)\n    at Connection.processLogin7Response (D:\\home\\site\\wwwroot\\node_modules\\tedious\\lib\\connection.js:1277:16)\n    at Connection.message (D:\\home\\site\\wwwroot\\node_modules\\tedious\\lib\\connection.js:1789:14)\n    at Connection.dispatchEvent (D:\\home\\site\\wwwroot\\node_modules\\tedious\\lib\\connection.js:992:38)\n    at MessageIO.<anonymous> (D:\\home\\site\\wwwroot\\node_modules\\tedious\\lib\\connection.js:886:18)\n    at emitNone (events.js:105:13)\n    at MessageIO.emit (events.js:207:7)","code":"ELOGIN","originalError":{"message":"Login failed for user 'dbadmin'.","code":"ELOGIN"},"name":"ConnectionError","level":"error","timestamp":"2019-05-02T05:21:52.635Z"}
+{"level":"info","message":"Server started at port \\\\.\\pipe\\d69ff1e1-bcb3-464a-b51f-3cda2b02c772.","timestamp":"2019-05-02T05:26:18.797Z"}
+{"level":"info","message":"Connected to database successfully.","timestamp":"2019-05-02T05:26:19.047Z"}
+{"level":"error","message":"Internal server error Invalid object name 'dbo.SentimentAnalysisMetadata'.","timestamp":"2019-05-02T05:26:19.828Z"}
+{"level":"info","message":"Server started at port \\\\.\\pipe\\e9ea03d6-6d35-4764-befe-ee737a881158.","timestamp":"2019-05-02T05:30:52.163Z"}
+{"level":"info","message":"Connected to database successfully.","timestamp":"2019-05-02T05:30:52.381Z"}
+{"level":"error","message":"Internal server error Invalid object name 'dbo.SentimentAnalysisMetadata'.","timestamp":"2019-05-02T05:32:11.976Z"}
+level":"info","message":"Connected to database successfully.","timestamp":"2019-05-02T05:31:55.461Z"}
+{"level":"info","message":"Server started at port \\\\.\\pipe\\63e0c057-dccd-46e6-bf8e-be4a4f6496e0.","timestamp":"2019-05-02T05:35:38.348Z"}
+{"level":"info","message":"Connected to database successfully.","timestamp":"2019-05-02T05:35:38.597Z"}
+{"level":"error","message":"Internal server error Invalid object name 'dbo.SentimentAnalysisMetadata'.","timestamp":"2019-05-02T05:48:14.820Z"}

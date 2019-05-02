@@ -52,7 +52,7 @@ router.post("/", async (req, res) => {
   const Intent = response.data.BodyIntentActions;
 
    var query =
-    "Insert into dbo.SentimentAnalysisMetadata(Sentiment, ConversationId, Subject, Sender, ToList, CCList, SentimentScore,  SubjectScore, Domain, AccountName,LocalTimeStamp, GMTTimeStamp, Keywords,Subjectivity, Intent, CreatedAt, Categorization ,SubjectSubjectivity,ExplicitContent, TextAbout , EmailBody )values" +
+    "Insert into dbo.EmailSentimentData(Sentiment, ConversationId, Subject, Sender, ToList, CCList, SentimentScore,  SubjectScore, Domain, AccountName,LocalTimeStamp, GMTTimeStamp, Keywords,Subjectivity, Intent, CreatedAt, Categorization ,SubjectSubjectivity,ExplicitContent, TextAbout , EmailBody )values" +
     "(@Sentiment, @ConversationId,@Subject,@Sender,@ToList,@CCList, @SentimentScore, @SubjectScore , @Domain, @AccountName,@LocalTimeStamp, @GMTTimeStamp,@Keywords ,@Subjectivity,@Intent,@CreatedAt,@Categorization,@SubjectSubjectivity,@ExplicitContent,@TextAbout, @EmailBody )";
   const pool = await poolPromise;
   const result = await pool
@@ -155,7 +155,7 @@ router.get("/lastSync", async (req, res) => {
 });
 
 router.get("/emaildata", async (req, res) => {
-  var query = "select * from dbo.SentimentAnalysisMetadata";
+  var query = "select * from dbo.EmailSentimentData";
   const pool = await poolPromise;
   const result = await pool.request().query(query);
   res.send(result.recordset);
@@ -169,14 +169,14 @@ router.get("/emailList", async (req, res) => {
 });
 
 router.get("/verifiedEmails", async (req, res) => {
-  var query = "select Id, Subject, Verified , IsExported from dbo.SentimentAnalysisMetadata WHERE (Verified = 0 OR Verified = 1) And IsExported = 0";
+  var query = "select Id, Subject, Verified , IsExported from dbo.EmailSentimentData WHERE (Verified = 0 OR Verified = 1) And IsExported = 0";
   const pool = await poolPromise;
   const result = await pool.request().query(query);
   res.send(result.recordset);
 });
 
 router.put("/emaildata/:Id", async (req, res) => {
-    var query = 'UPDATE dbo.SentimentAnalysisMetadata SET Verified ='+ req.body.Verified + 'WHERE Id = '+ req.params.Id;
+    var query = 'UPDATE dbo.EmailSentimentData SET Verified ='+ req.body.Verified + 'WHERE Id = '+ req.params.Id;
     const pool = await poolPromise;
     const result = await pool.request()
         .query(query);
@@ -184,7 +184,7 @@ router.put("/emaildata/:Id", async (req, res) => {
 })
 
 router.post("/emaildataupdate", async (req, res) => {
-    var query = 'UPDATE dbo.SentimentAnalysisMetadata SET IsExported = 1 WHERE Id = '+ req.body.Id;
+    var query = 'UPDATE dbo.EmailSentimentData SET IsExported = 1 WHERE Id = '+ req.body.Id;
     const pool = await poolPromise;
     const result = await pool.request()
         .query(query);
@@ -195,7 +195,7 @@ router.post("/emaildata/bulkUpdate", async (req, res) => {
 try{
  let emailData = req.body;
   for (var i = 0, len = emailData.length; i < len; i++) {
-  var query = 'UPDATE dbo.SentimentAnalysisMetadata SET IsExported = 1 WHERE Id = '+ emailData[i].Id; 
+  var query = 'UPDATE dbo.EmailSentimentData SET IsExported = 1 WHERE Id = '+ emailData[i].Id; 
   const pool = await poolPromise;
   const result = await pool.request().query(query);  
   }

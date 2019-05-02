@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const metadata = require('../routes/metadata');
 const dashboard = require('../routes/dashboard');
+const enterceptorapi=require('../routes/enterceptorapi');
 var fs = require('fs');
 var path = require("path");
 var public = path.join(__dirname, "../public");
@@ -22,5 +23,6 @@ module.exports = function (app) {
     app.use("/", express.static(public));
     app.use('/api/metadata', metadata);
     app.use('/api/dashboard', dashboard);   
+    app.use('/api/enterceptorapi', enterceptorapi);
     
 }
