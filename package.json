@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "azure-storage": "^2.10.2",
     "bcrypt": "^2.0.1",
     "config": "^1.30.0",
